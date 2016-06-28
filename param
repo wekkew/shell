@@ -1,0 +1,6 @@
+echo $1
+
+
+#!/Users/wekkew/.nvm/versions/node/v6.1.0/bin/node
+
+console.log('hi');

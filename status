@@ -1,0 +1,16 @@
+# $1...$9	parameter -- command line parameter
+# $?  last command statuscode
+# $# number of a command line parameter
+# $@ all command line parameters
+# $$ current process pid
+
+cat data.txt
+
+if [ $? -ne 0 ]; then
+  echo ' hello geco hibavan'  
+  exit 1
+fi
+
+echo josag van
+
+exit 0

@@ -1,0 +1,7 @@
+echo -n 'Please enter your name: '
+read name
+
+echo -n 'Please enter your age: '
+read age
+
+echo $name:$age >> data.txt
