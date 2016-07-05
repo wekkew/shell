@@ -1,12 +1,12 @@
 'use strict'
 
 let manual = {
-    nick : "NICK is a command to set a nickname on the server, requires one parameter: the nickname (example: /nick mynickname)",
+    nick : "NICK is a command to set a nickname on the server, taking one parameter: the nickname (example: /nick mynickname)",
     online: "ONLINE is a command to list every online user on the server, optional parameter the listitem's mark (example: /online - {gives a list with listmark '-' instead of the original listmark '*'})",
-    priv: "PRIV is a command to send private message to an online client, requires two parameters the first is to whom it should send, and from the second parameter, the message (example: /priv nickname random text what is the message {sends: <nickname> random text what is the message})",
+    priv: "PRIV is a command to send private message to an online client, taking two parameters the first is to whom it should send, and from the second parameter, the message (example: /priv nickname random text what is the message {sends: <nickname> random text what is the message})",
     yes: "YES is a command answering the login question (example: /yes)",
     all: "ALL is a command to list every valid command on the server, optinal parameter the listitem mark seen as in ONLINE",
-    man: "MAN is a command to get the 'manual' for the requiested command, requires one parameter: the name of the wanted command (example: /man all {gives the manual for the 'all' command})",
+    man: "MAN is a command to get the 'manual' for the requiested command, taking one parameter: the name of the wanted command (example: /man all {gives the manual for the 'all' command})",
     serverInfo: "in this server you can chat in a public chatroom \r\nyou need to set a nickname first: use the /nick yournickname formula \r\nto give a command use the '/' start and the command's name \r\n"
 };
 
@@ -67,7 +67,7 @@ server.on('connection', function (socket) {
         },
         all: function (listitem) {
             listitem = listitem || '*';
-            Object.keys(commands).forEach(function (actualCommand) {
+            Object.keys(manual).forEach(function (actualCommand) {
                 socket.write(`${listitem} ${actualCommand}\r\n`);
             })
         },
